@@ -7,7 +7,7 @@ $username = "root";
 $password = "123";
 $db = "eosdb"
 // 创建连接
-$conn = new mysqli($servername, $username, $password,$db);
+//$conn = new mysqli($servername, $username, $password,$db);
  
 echo "连接"
 ?>
