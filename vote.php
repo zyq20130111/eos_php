@@ -16,7 +16,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"date":"'   . $rs["date"] . '",';
     $outp .= '"vote":"'. $rs["vote"] . '"}'; 
 }
-$outp ='{"records":['.$outp.']}';
+$outp ='{"history":['.$outp.']}';
 $conn->close();
 
 echo($outp);
