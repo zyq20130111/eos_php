@@ -6,16 +6,7 @@ echo("aaaaa")
 $conn = new mysqli("localhost", "root", "123", "eosdb");
 echo("aaaaa")
 $result = $conn->query("SELECT voter,proudcer, date,vote  FROM voter_tbl");
-
-/*
-$outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"voter":"'  . $rs["voter"] . '",';
-    $outp .= '"proudcer":"'   . $rs["proudcer"]        . '",';
-    $outp .= '"date":"'. $rs["date"]     . '"}'; 
-}
-$outp ='{"records":['.$outp.']}';
+echo("bbbbb")
 $conn->close();
 
 echo($outp);
