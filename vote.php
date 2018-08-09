@@ -23,7 +23,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $history .= '"vote":"'. $rs["vote"] . '"}'; 
 }
 
-echo($history)
+echo($history);
 /*
 $ranking = '"ranking"':.rangking;
 $total = '"total"':.total;
