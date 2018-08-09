@@ -15,22 +15,13 @@ $producers = $_GET["producers"];
 $voteNum = $_GET["votenum"];
 $producer = $_GET["producer"];
 
-echo($producer);
-echo("ssssssssssssss");
 $sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = '" . $producer . "'";
-echo($sql);
-
-$sql = "select * from ";
-$echo($sql);
-
-/*
-echo($sql);
 $result = $conn->query($sql);
 $history = "";
 
 echo($producer);
 
-
+/*
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
     $history .= '{"voter":"'  . $rs["voter"] . '",';
