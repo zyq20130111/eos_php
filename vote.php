@@ -11,7 +11,7 @@ $ranking = 100;
 $total = 20000;
 $voter = "vote1";
 $producer = ["pb1","pb2"];
-$voteNum = 100
+$voteNum = 100;
 
 $result = $conn->query("SELECT voter,proudcer,date,vote FROM voter_tbl");
 $history = "";
