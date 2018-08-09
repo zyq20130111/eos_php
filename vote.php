@@ -30,10 +30,11 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 $ranking = '"ranking":' . $ranking;
 $total = '"total":' . $total;
 $voter = '"voter":' . '"' . $voter . '"';
+$producers = '"producers":' . '"' . $producers . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 
-$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
+$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," . $producers . "," .  $voteNum . "," .  $history . "}" ;
 echo($outp);
 
 $conn->close();
