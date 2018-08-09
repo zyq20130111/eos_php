@@ -7,13 +7,15 @@ if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
 } 
 
-$ranking = 100;
-$total = 20000;
-$voter = "vote1";
-$producer = ["pb1","pb2"];
-$voteNum = 100;
+$ranking = 1;
+$total = 300;
 
-$result = $conn->query("SELECT voter,proudcer,date,vote FROM voter_tbl");
+$voter = $_GET["voter"];
+$producers = $_GET["producers"];
+$voteNum = $_GET["votenum"];
+$producer = $GET["producer"];
+
+$result = $conn->query('SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = $producer');
 $history = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
