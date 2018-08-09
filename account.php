@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $account = $_GET["account"];
-
+echo($account);
 /**
  * 模拟post进行url请求
  * @param string $url
@@ -31,7 +31,7 @@ function request_post($url = '', $param = '') {
 function getAccount($account = ''){
     $post_data["account_name"] = $accountl
     $res = request_post("http:127.0.0.1:8888/v1/chain/get_accoun",$post_data);
-    echo($res)   
+    echo($res);   
 }
 
 echo("ssssss");
