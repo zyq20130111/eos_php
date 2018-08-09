@@ -16,7 +16,7 @@ $voteNum = $_GET["votenum"];
 $producer = $_GET["producer"];
 
 echo($producer);
-
+echo("ssssssssssssss");
 /*$sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = ";*/
 $sql = "select * from ";
 $echo($sql);
