@@ -29,7 +29,7 @@ function request_post($url = '', $param = '') {
 }
 
 $post_data = array("account_name" => $account);
-$res = request_post("http:127.0.0.1:8888/v1/chain/get_account",$post_data);
+$res = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
 echo($res);   
 
 echo("ssssss");
