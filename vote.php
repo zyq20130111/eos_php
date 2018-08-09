@@ -25,6 +25,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
 echo($history);
 $ranking = '"ranking":'.rangking;
+echo($ranking);
 //$total = '"total":'.total;
 //$voter = '"voter":':.voter;
 //$voteNum = '"voteNum":'.voteNum;
