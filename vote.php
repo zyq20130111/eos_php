@@ -13,7 +13,7 @@ $total = 300;
 $voter = $_GET["voter"];
 $producers = $_GET["producers"];
 $voteNum = $_GET["votenum"];
-$producer = $GET["producer"];
+$producer = $_GET["producer"];
 
 $result = $conn->query('SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = $producer');
 $history = "";
