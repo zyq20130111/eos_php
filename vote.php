@@ -19,7 +19,7 @@ $result = $conn->query('SELECT voter,proudcer,date,vote FROM voter_tbl where pro
 $history = "";
 
 echo($voter);
-echo(#producers);
+echo($producers);
 echo($voteNum);
 echo($producer);
 /*
