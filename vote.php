@@ -22,6 +22,7 @@ echo($voter);
 echo(#producers);
 echo($voteNum);
 echo($producer);
+/*
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
     $history .= '{"voter":"'  . $rs["voter"] . '",';
