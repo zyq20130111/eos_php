@@ -30,7 +30,7 @@ $voter = '"voter":':.voter;
 $voteNum = '"voteNum":'.voteNum;
 $history = '"history":['.$history.']';
 
-$outp ='{.$ranking.$total.$voter.$voteNum.$history}';
+$outp ='{'.$ranking.$total.$voter.$voteNum.$history.'}';
 $conn->close();
 
 echo($outp);
