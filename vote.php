@@ -19,9 +19,6 @@ $sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = '" . $pr
 $result = $conn->query($sql);
 $history = "";
 
-echo($producer);
-
-
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
     $history .= '{"voter":"'  . $rs["voter"] . '",';
@@ -31,18 +28,15 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 }
 
 $ranking = '"ranking":' . $ranking;
-echo($ranking);
 $total = '"total":' . $total;
 $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 
-echo($history);
-/*
 echo('{' . $ranking);
 $outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
 echo($outp);
-*/
+
 $conn->close();
 
 ?>
