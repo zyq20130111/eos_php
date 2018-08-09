@@ -29,8 +29,8 @@ $voter = '"voter":':.$voter;
 $voteNum = '"voteNum":'.$voteNum;
 $history = '"history":['.$history.']';
 
-echo($history)
-$outp ='{'.$ranking.$total.$voter.$voteNum.$history.'}';
+echo($history);
+$outp = "{" . $ranking . $total . $voter . $voteNum . $history . "}";
 $conn->close();
 
 echo($outp);
