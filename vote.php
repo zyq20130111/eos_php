@@ -22,9 +22,9 @@ $history = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
     $history .= '{"voter":"'  . $rs["voter"] . '",';
-    $history .= '"proudcer":"'   . $rs["proudcer"] . '",';
-    $history .= '"date":"'   . $rs["date"] . '",';
-    $history .= '"vote":"'. $rs["vote"] . '"}'; 
+    $history .= '"proudcer":"' . $rs["proudcer"] . '",';
+    $history .= '"date":"' . $rs["date"] . '",';
+    $history .= '"vote":"' .  $rs["vote"]  . '"}'; 
 }
 
 /*
