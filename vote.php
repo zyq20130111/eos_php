@@ -29,20 +29,16 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $history .= '"date":"' . $rs["date"] . '",';
     $history .= '"vote":"' .  $rs["vote"]  . '"}'; 
 }
-echo($history);
-
-echo($ranking);
 
 $ranking = '"ranking":' . $ranking;
 echo($ranking);
-/*
 $total = '"total":' . $total;
 $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 
 echo($history);
-
+/*
 echo('{' . $ranking);
 $outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
 echo($outp);
