@@ -18,7 +18,6 @@ $producer = $_GET["producer"];
 $result = $conn->query('SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = $producer');
 $history = "";
 
-echo($voter);
 
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($history != "") {$history .= ",";}
@@ -34,7 +33,7 @@ $total = '"total":' . $total;
 $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
-echo($voter);
+
 
 $outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}";
 echo($outp);
