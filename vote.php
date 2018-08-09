@@ -16,7 +16,7 @@ $voteNum = 100
 $result = $conn->query("SELECT voter,proudcer,date,vote FROM voter_tbl");
 $history = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
+    if ($history != "") {$history .= ",";}
     $history .= '{"voter":"'  . $rs["voter"] . '",';
     $history .= '"proudcer":"'   . $rs["proudcer"] . '",';
     $history .= '"date":"'   . $rs["date"] . '",';
