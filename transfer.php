@@ -12,8 +12,9 @@ $balance = $_GET["balance"];
 $transferor = $_GET["transferor"];
 $recipient = $_GET["recipient"];
 $quantity = $_GET["quantity"];
+$account = $_GET["account"];
 
-$sql = "SELECT transferor,recipient,date,quantity FROM transfer_tbl where transferor = '" . $transferor . "'";
+$sql = "SELECT transferor,recipient,date,quantity FROM transfer_tbl where transferor = '" . $account . "' or recipient = '" . $account . "'";
 $result = $conn->query($sql);
 $history = "";
 
