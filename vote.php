@@ -30,10 +30,10 @@ $voteNum = '"voteNum":'.$voteNum;
 $history = '"history":['.$history.']';
 
 echo($history);
-$outp = "{" . $ranking . $total . $voter . $voteNum . $history . "}";
-$conn->close();
+//$outp = "{" . $ranking . $total . $voter . $voteNum . $history . "}";
+//$conn->close();
 
-echo($outp);
+//echo($outp);
 
 
 
