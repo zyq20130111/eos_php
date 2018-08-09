@@ -11,7 +11,7 @@ function request_post($url = '', $param = '') {
      }
 
      $header = array();
-     $header[] = 'Authorization:'.$tmp;
+     //$header[] = 'Authorization:'.$tmp;
      $header[] = 'Accept:application/json';
      $header[] = 'Content-Type:application/json;charset=utf-8';
         
