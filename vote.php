@@ -37,7 +37,7 @@ $history = '"history":[' . $history . ']';
 echo($history);
 //echo('{' . $ranking);
 //$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
-echo($outp);
+//echo($outp);
 
 $conn->close();
 
