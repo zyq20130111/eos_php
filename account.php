@@ -16,7 +16,7 @@ function request_post($url = '', $param = '') {
      $ch = curl_init();//初始化curl
      curl_setopt($ch, CURLOPT_URL,$postUrl);//抓取指定网页
 
-     curl_setopt($ch, CURLOPT_HEADER,array("Content-Type: application/json");//设置header
+     //curl_setopt($ch, CURLOPT_HEADER,array("Content-Type: application/json");//设置header
 
      curl_setopt($ch, CURLOPT_POST, 1);//post提交方式
      curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
