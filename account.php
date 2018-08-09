@@ -18,7 +18,6 @@ function request_post($url = '', $param = '') {
 
      curl_setopt($ch, CURLOPT_HEADER,array("Content-Type: application/json");//设置header
 
-     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);//要求结果为字符串且输出到屏幕上
      curl_setopt($ch, CURLOPT_POST, 1);//post提交方式
      curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
      $data = curl_exec($ch);//运行curl
