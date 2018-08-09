@@ -34,9 +34,10 @@ $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 
+echo("{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}");
 
-$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
-echo($outp);
+//$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
+//echo($outp);
 
 /*
 $conn->close();
