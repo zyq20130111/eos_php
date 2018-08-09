@@ -9,11 +9,16 @@ function request_post($url = '', $param = '') {
      if (empty($url) || empty($param)) {
         return false;
      }
+
+     $header = array();
+     $header[] = 'Authorization:'.$tmp;
+     $header[] = 'Accept:application/json';
+     $header[] = 'Content-Type:application/json;charset=utf-8';
         
      $postUrl = $url;
      $curlPost = $param;
      $ch = curl_init();//初始化curl
-     curl_setopt($ch, CURLOPT_HEADER, false);
+     curl_setopt($ch, CURLOPT_HEADER, $header);
      curl_setopt($ch, CURLOPT_POST, true);
      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
      curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
