@@ -35,10 +35,12 @@ $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 echo($voter);
-/*
-$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}";
-$conn->close();
 
+$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}";
+echo($outp);
+
+/*
+$conn->close();
 echo($outp);
 */
 ?>
