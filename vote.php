@@ -34,7 +34,7 @@ $voter = '"voter":' . '"' . $voter . '"';
 $voteNum = '"voteNum":' . $voteNum;
 $history = '"history":[' . $history . ']';
 
-echo($history)
+echo($history);
 //echo('{' . $ranking);
 //$outp = "{" . $ranking . "," .  $total . "," .  $voter . "," .  $voteNum . "," .  $history . "}" ;
 echo($outp);
