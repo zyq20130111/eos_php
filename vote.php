@@ -16,9 +16,9 @@ $voteNum = $_GET["votenum"];
 $producer = $_GET["producer"];
 
 echo($producer);
-
-$sql = ”SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = \'“ . $producer . "\'";
 /*
+$sql = ”SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = \'“ . $producer . "\'";
+
 echo($sql);
 $result = $conn->query($sql);
 $history = "";
