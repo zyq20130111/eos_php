@@ -17,7 +17,7 @@ $producer = $_GET["producer"];
 
 echo($producer);
 
-//$sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = ";
+/*$sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = ";*/
 $sql = "select * from ";
 $echo($sql);
 
