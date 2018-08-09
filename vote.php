@@ -17,8 +17,8 @@ $producer = $_GET["producer"];
 
 echo($producer);
 
-$strsql = ”SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = \'“ . $producer . "\'";
-$echo($strsql);
+$sql = ”SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = “ . $producer;
+$echo($sql);
 /*
 echo($sql);
 $result = $conn->query($sql);
