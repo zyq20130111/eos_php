@@ -21,7 +21,8 @@ function request_post($url = '', $param = '') {
      curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
      $data = curl_exec($ch);//运行curl
      curl_close($ch);
-     echo("ssssssss");        
+     echo("ssssssss");
+     echo($data);        
      return $data;
 }
 
