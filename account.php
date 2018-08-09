@@ -22,17 +22,15 @@ function request_post($url = '', $param = '') {
      curl_setopt($ch, CURLOPT_URL, $postUrl);
  
      $data = curl_exec($ch);//运行curl
-     curl_close($ch);
-     echo("ssssssss");
-     echo($data);        
+     curl_close($ch);        
      return $data;
 }
 $account = '"' . $account . '"';
+echo($account);
 $post_data = array("account_name" => $account);
 $res = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
 echo($res);   
 
-echo("ssssss");
 getAccount($account);
 
 ?>
