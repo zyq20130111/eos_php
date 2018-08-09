@@ -4,11 +4,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $account = $_GET["account"];
 echo($account);
-/**
- * 模拟post进行url请求
- * @param string $url
- * @param string $param
- */
+
+/*
 function request_post($url = '', $param = '') {
      if (empty($url) || empty($param)) {
         return false;
@@ -33,7 +30,7 @@ function getAccount($account = ''){
     $res = request_post("http:127.0.0.1:8888/v1/chain/get_accoun",$post_data);
     echo($res);   
 }
-
+*/
 echo("ssssss");
 getAccount($account);
 
