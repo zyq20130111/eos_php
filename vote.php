@@ -23,14 +23,14 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $history .= '"vote":"'. $rs["vote"] . '"}'; 
 }
 
-
-$ranking = '"ranking":'.rangking;
-$total = '"total":'.total;
-$voter = '"voter":':.voter;
-$voteNum = '"voteNum":'.voteNum;
-$history = '"history":['.$history.']';
-
 echo($history)
+$ranking = '"ranking":'.rangking;
+//$total = '"total":'.total;
+//$voter = '"voter":':.voter;
+//$voteNum = '"voteNum":'.voteNum;
+//$history = '"history":['.$history.']';
+
+//echo($history)
 //$outp ='{'.$ranking.$total.$voter.$voteNum.$history.'}';
 //$conn->close();
 
