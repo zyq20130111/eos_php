@@ -14,13 +14,13 @@ $recipient = $_GET["recipient"];
 $quantity = $_GET["quantity"];
 $account = $_GET["account"];
 
-$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop"
-$inj_stra = split("|",$inj_str)
+$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop";
+$inj_stra = explode("|" , $inj_str);
 
-for($i=0;$i < count($inj_stra);$i++)
+for($i=0 ; $i < count($inj_stra) ; $i++)
 {
     if($inj_stra[$i] == strtolower($account)){
-        echo '{"code":500}'
+        echo '{"code":500}';
         return;
     }
 }
