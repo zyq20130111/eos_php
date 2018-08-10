@@ -20,7 +20,7 @@ $producer = $_GET["producer"];
 //$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop";
 $inj_str = "sdfsdfsdfsdfsfd";
 echo($inj_str);
-$inj_stra = split("|",$inj_str);
+$inj_stra = ["sss","dddd"];//split("|",$inj_str);
 
 for($i=0 ; $i < count($inj_stra) ; $i++)
 {
