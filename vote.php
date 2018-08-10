@@ -16,19 +16,18 @@ $producers = $_GET["producers"];
 $voteNum = $_GET["votenum"];
 $producer = $_GET["producer"];
 
-/* 
+ 
 $inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop";
-echo($inj_str);
 $inj_stra = split("|",$inj_str);
 
-for($i=0 ; $i < count($inj_str) ; $i++)
+for($i=0 ; $i < count($inj_stra) ; $i++)
 {
     if($inj_stra[$i] == strtolower($producer)){
         echo '{"code":500}'
         return;
     }
 }
-*/
+
 $sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = '" . $producer . "'";
 $result = $conn->query($sql);
 $history = "";
