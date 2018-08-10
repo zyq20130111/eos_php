@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $conn = new mysqli("localhost","root","123","eosdb");
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
-    return;
+   // return;
 } 
 
 $ranking = 1;
@@ -17,8 +17,8 @@ $voteNum = $_GET["votenum"];
 $producer = $_GET["producer"];
 
  
-$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop"
-$inj_stra = split("|",$inj_str)
+$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop";
+$inj_stra = split("|",$inj_str);
 
 for($i=0;$i < count($inj_stra);$i++)
 {
