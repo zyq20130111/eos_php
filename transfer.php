@@ -14,6 +14,17 @@ $recipient = $_GET["recipient"];
 $quantity = $_GET["quantity"];
 $account = $_GET["account"];
 
+$inj_str = "'|and|exec|insert|select|delete|update|count|*|%|chr|mid|master|truncate|char|declare|;|or|-|+|,|drop"
+$inj_stra = split("|",$inj_str)
+
+for($i=0;$i < count($inj_stra);$i++)
+{
+    if($inj_stra[$i] == strtolower($account)){
+        echo '{"code":500}'
+        return;
+    }
+}
+
 $sql = "SELECT transferor,recipient,date,quantity FROM transfer_tbl where transferor = '" . $account . "' or recipient = '" . $account . "'";
 $result = $conn->query($sql);
 $history = "";
