@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost","root","123","eosdb");
+$conn = new mysqli("localhost","root","galaxy123456@","eosdb");
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
    // return;
@@ -28,7 +28,7 @@ for($i=0 ; $i < count($inj_stra) ; $i++)
     }
 }
 
-$sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = '" . $producer . "'";
+$sql = "SELECT voter,proudcer,date,vote FROM voter_tbl where proudcer = '" . $producer . "'  ORDER BY Id DESC limit 0,20";
 $result = $conn->query($sql);
 $history = "";
 
