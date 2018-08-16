@@ -44,7 +44,6 @@ $sql  = "SELECT * from producers_tbl where owner = '" . $producer . "'";
 $result = $conn->query($sql);
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
      $total = $rs["total_votes"];
-     $total = $total / 10000;
 }
 
 $sql  = "SELECT count(*) AS MC from producers_tbl where total_votes  >  " .  $total;
@@ -52,6 +51,8 @@ $result = $conn->query($sql);
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
      $ranking = $rs["MC"] + 1;
 }
+
+$total = $total / 10000;
 
 $ranking = '"ranking":' . $ranking;
 $total = '"total":' . $total;
