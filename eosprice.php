@@ -22,9 +22,9 @@ try{
 
    $price = "0";
 
-  if(res["code"] == 0){
+  if($res["code"] == 0){
      echo("zzzz");
-     $price = res["data"]["price"];
+     $price = $res["data"]["price"];
   }
   echo($price);
 }
