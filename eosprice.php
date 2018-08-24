@@ -43,12 +43,13 @@ try{
            } 
       }  
   }
-  
-  echo $price * $ratio; 
+  $json_str = '{"code":0,"price":%d}';
+  echo sprintf($json_str,$price * $ratio); 
+
 }
 catch(Exception $e)
 {
-  echo("error");  
+  echo '{"code":-1}';  
 }
 
 
