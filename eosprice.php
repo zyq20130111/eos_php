@@ -16,6 +16,7 @@ function request_get($url = ''){
 }
  
 $result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
+$res=json_decode($result,true);
 echo $result;
 
 ?>
