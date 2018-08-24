@@ -20,6 +20,7 @@ $res=json_decode($result,true);
 
 $price = "0"
 if(res["code"] == 0){
+   echo "zzzz"
    $price = res["data"]["price"]
 }
 
