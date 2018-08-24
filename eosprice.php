@@ -14,16 +14,24 @@ function request_get($url = ''){
 
    return $file_contents;
 }
- 
-$result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
-$res=json_decode($result,true);
 
-$price = "0"
-if(res["code"] == 0){
-   echo "zzzz"
-   $price = res["data"]["price"]
+try{
+ 
+   $result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
+   $res=json_decode($result,true);
+
+   $price = "0";
+
+  if(res["code"] == 0){
+     echo("zzzz");
+     $price = res["data"]["price"];
+  }
+  echo($price);
+}
+catch(Exception $e)
+{
+  echo("error");  
 }
 
-echo $price;
 
 ?>
