@@ -16,17 +16,35 @@ function request_get($url = ''){
 }
 
 try{
- 
+
+   $price = 0; 
+
    $result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
    $res=json_decode($result,true);
 
-   $price = "0";
-
   if($res["code"] == 0){
-     echo("zzzz");
      $price = $res["data"]["price"];
   }
-  echo($price);
+
+  $ratio = 0;
+
+  $result1 = request_get("https://ticker.mars.bituniverse.org/ticker/fiatmap");
+  $res1 = json_decode($result1,true);
+  if($res1["status"] == 0){
+
+      $data = $res1["data"];
+
+      foreach($data as $item){
+
+           if(($item["base"] == "USD") && ($item["quote"] == "CNY")){
+              $ratio = floatval($item["price"]);
+
+              break;
+           } 
+      }  
+  }
+  
+  echo $price * $ratio; 
 }
 catch(Exception $e)
 {
