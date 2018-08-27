@@ -16,27 +16,23 @@ function request_get($url = ''){
    return $file_contents;
 }
 
-echo "3333";
-
 
 $walletpwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
-echo "111";
-/*
+
 $creator = $_GET["creator"];
 echo $creator;
 
 $name = $_GET["name"];
 $ownerkey = $_GET["ownerkey"];
 $activekey = $_GET["activekey"];
-echo "1111";
+
 
 $ram = $_GET["ram"];
 $cpu = $_GET["cpu"];
 $net = $GET["net"];
 
-echo "1111";
 $code = -1;
-
+/*
 try{
    echo "2222";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
