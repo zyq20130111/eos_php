@@ -15,6 +15,7 @@ function request_get($url = ''){
    return $file_contents;
 }
 
+echo "3333";
 $wallet-pwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
 
 $creator = $_GET["creator"];
@@ -25,7 +26,7 @@ $ram = $_GET["ram"];
 $cpu = $_GET["cpu"];
 $net = $GET["net"];
 
-echo "1111"
+echo "1111";
 $code = -1;
 
 try{
