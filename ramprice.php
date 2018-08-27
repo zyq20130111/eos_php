@@ -35,14 +35,12 @@ try{
       if(($res != null)  &&  ($res["rows"] != null) && (count($res["rows"]) > 0)){
 
          $item = current($res["rows"]);
-         echo $item;
+         
          $basebalance =  $item["base"]["balance"];
-         echo $basebalance;
          $basebalance =  split(" ", $basebalance);
          $basebalance = floatval($basebalance[0]);
          
          $quotebalance = $item["quote"]["balance"];
-         echo $quotebalance;
          $quotebalance = split(" ",$quotebalance);
          $quotebalance = floatval($quotebalance[0]);
     
