@@ -36,19 +36,16 @@ try{
 
          $item = $res["rows"][0];
          
-         $basebalance =  $item["base"]["balance"];
-         echo $basebalance; 
+         $basebalance =  $item["base"]["balance"]; 
          $basebalance =  explode(" ", $basebalance);
-         echo $basebalance[0];
          $basebalance = floatval($basebalance[0]);
-         echo $basebalance;
 
          $quotebalance = $item["quote"]["balance"];
-         $quotebalance = split(" ",$quotebalance);
+         $quotebalance = explode(" ",$quotebalance);
          $quotebalance = floatval($quotebalance[0]);
     
          $json_str = '{"code":0,"price":%f}';
-         echo sprintf($json_str,$basebalance / $quotebalance);
+         echo sprintf($json_str,$quotebalance / $basebalance);
       }
 }
 catch(Exception $e){
