@@ -31,15 +31,15 @@ try{
       $post_data = '{"scope":"eosio","code":"eosio","table":"rammarket","json": true}';
       $res = request_post("http://127.0.0.1:8888/v1/chain/get_table_rows",$post_data);
       $res = json_decode($res,true);
-      echo "aaaa";
+      
       if(($res != null)  &&  ($res["rows"] != null) && (count($res["rows"]) > 0)){
 
-         $item = current($res["rows"]);
+         $item = $res["rows"][0];
          
          $basebalance =  $item["base"]["balance"];
          echo $basebalance; 
-         $basebalance =  split(" ", $basebalance);
-         echo $basebalance;
+         $basebalance =  explode(" ", $basebalance);
+         echo $basebalance[0];
          $basebalance = floatval($basebalance[0]);
          echo $basebalance;
 
