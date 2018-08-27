@@ -38,20 +38,22 @@ try{
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    exec("./create.sh",$output,$status);
    echo "3333";
-/*   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
+
+   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
 
    if($result != null){
 
-      $res=json_decode($result,true);
-      if($res["account_name"] != null){
+      $json =json_decode($result,true);
+      if($json["account_name"] != null){
+
           if(trim($res["account_name"]) == trim($name)){
                $code = 0
           }
       }
    }
    echo sprintf('"code":%d',$code);
- */
+ 
 }
 catch(Exception $e){
    echo sprintf('"code":%d',$code);
