@@ -34,7 +34,7 @@ try{
       echo "aaaa";
       if(($res != null)  && (count($res) > 0)){
 
-         echo "aaa";
+         echo $res[0];
          $basebalance =  $res[0]["base"]["balance"];
          echo $basebalance;
          $basebalance =  split(" ", $basebalance);
