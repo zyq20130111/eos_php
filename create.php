@@ -32,13 +32,13 @@ $cpu = $_GET["cpu"];
 $net = $GET["net"];
 
 $code = -1;
-/*
+
 try{
    echo "2222";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    exec("./create.sh",$output,$status);
-
-   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
+   echo "3333";
+/*   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
 
    if($result != null){
@@ -51,10 +51,11 @@ try{
       }
    }
    echo sprintf('"code":%d',$code);
+ */
 }
 catch(Exception $e){
    echo sprintf('"code":%d',$code);
 }
-*/
+
 
 ?>
