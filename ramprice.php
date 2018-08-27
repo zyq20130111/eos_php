@@ -31,9 +31,10 @@ try{
       $post_data = '{"scope":"eosio","code":"eosio","table":"rammarket","json": true}';
       $res = request_post("http://127.0.0.1:8888/v1/chain/get_table_rows",$post_data);
       $res = json_decode($res,true);
+      echo "aaaa";
       if(($res != NULL)  && (count($res) > 0)){
 
-         echo "aaa"
+         echo "aaa";
          $basebalance =  $res[0]["base"]["balance"];
          echo $basebalance;
          $basebalance =  split(" ", $basebalance);
