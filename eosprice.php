@@ -43,6 +43,9 @@ try{
            } 
       }  
   }
+  echo $price,"aaaa",$ratio;
+  sprinf($str,"price:%f,aaaa,$ratio:%f",$price,$ratio);
+  echo $str;
   $json_str = '{"code":0,"price":%f}';
   echo sprintf($json_str,$price * $ratio); 
 
