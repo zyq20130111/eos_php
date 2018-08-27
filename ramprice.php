@@ -33,6 +33,7 @@ try{
       $res = json_decode($res,true);
       if(($res != NULL)  && (count($res) > 0)){
 
+         echo "aaa"
          $basebalance =  $res[0]["base"]["balance"];
          echo $basebalance;
          $basebalance =  split(" ", $basebalance);
