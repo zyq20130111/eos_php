@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+
 function request_get($url = ''){
 
    $ch = curl_init();
@@ -16,6 +17,7 @@ function request_get($url = ''){
 }
 
 echo "3333";
+/*
 $wallet-pwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
 
 $creator = $_GET["creator"];
@@ -51,5 +53,6 @@ try{
 catch(Exception $e){
    echo sprintf('"code":%d',$code);
 }
+*/
 
-
+?>
