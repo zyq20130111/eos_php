@@ -32,9 +32,9 @@ try{
       $res = request_post("http://127.0.0.1:8888/v1/chain/get_table_rows",$post_data);
       $res = json_decode($res,true);
       echo "aaaa";
-      if(($res != null)  && (count($res) > 0)){
+      if(($res != null)  &&  ($res["rows"] != null) && (count($res["rows"]) > 0)){
 
-         $item = current($res);
+         $item = current($res["rows"]);
          echo $item;
          $basebalance =  $item["base"]["balance"];
          echo $basebalance;
