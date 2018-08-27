@@ -31,11 +31,22 @@ try{
       $post_data = '{"scope":"eosio","code":"eosio","table":"rammarket","json": true}';
       $res = request_post("http://127.0.0.1:8888/v1/chain/get_table_rows",$post_data);
       $res = json_decode($res,true);
+      if(($res != NULL)  && (count($res) > 0)){
 
-      echo $res;
+         $basebalance =  $res[0]["base"]["balance"];
+         $basebalance =  split(" ", $basebalance);
+         $basebalance = floatval($basebalance);
+
+         $quotebalance = $res[0]["quote"]["balance"];
+         $quotebalance = split(" ",$quotebalance);
+         $quotebalance = floatval($quotebalance);
+    
+         $json_str = '{"code":0,"price":%f}';
+         echo sprintf($json_str,$basebalance / $quotebalance);
+      }
 }
 catch(Exception $e){
-     
+    echo '{"code":-1}';    
 }
 
 ?>
