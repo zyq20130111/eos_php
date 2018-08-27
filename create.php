@@ -37,9 +37,10 @@ try{
    echo "2222";
    $cmd = sprintf('./create.sh "%s" %s %s %s %s "%s" "%s" "%s"',$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
-  /* 
+   
    exec("./create.sh",$output,$status);
-   echo "3333";
+   
+  /*
 
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
