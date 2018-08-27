@@ -33,9 +33,9 @@ $net = $_GET["net"];
 $code = -1;
 
 try{
-   $str_ram = '"%s"'.format($ram);
-   $str_cpu = '"%s"'.format($cpu);
-   $str_net = '"%s"'.format($net);
+   $str_ram = sprintf('"%s"',$ram);
+   $str_cpu = sprintf('"%s"',$cpu);
+   $str_net = sprintf('"%s"',$net);
 
    $cmd = sprintf('./create.sh "%s" %s %s %s %s %s %s %s',$walletpwd,$creator,$name,$ownerkey,$activekey,$str_ram,$str_cpu,$str_net);
    echo $cmd;
