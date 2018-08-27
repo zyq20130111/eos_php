@@ -35,11 +35,11 @@ try{
 
          $basebalance =  $res[0]["base"]["balance"];
          $basebalance =  split(" ", $basebalance);
-         $basebalance = floatval($basebalance);
-
+         $basebalance = floatval($basebalance[0]);
+         
          $quotebalance = $res[0]["quote"]["balance"];
          $quotebalance = split(" ",$quotebalance);
-         $quotebalance = floatval($quotebalance);
+         $quotebalance = floatval($quotebalance[0]);
     
          $json_str = '{"code":0,"price":%f}';
          echo sprintf($json_str,$basebalance / $quotebalance);
