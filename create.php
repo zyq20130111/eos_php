@@ -25,10 +25,11 @@ $ram = $_GET["ram"];
 $cpu = $_GET["cpu"];
 $net = $GET["net"];
 
+echo "1111"
 $code = -1;
 
 try{
-   echo "aaaaa";
+   echo "2222";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    exec("./create.sh",$output,$status);
 
