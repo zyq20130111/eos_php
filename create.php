@@ -32,7 +32,7 @@ $cpu = $_GET["cpu"];
 $net = $GET["net"];
 
 $code = -1;
-
+/*
 try{
    echo "2222";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
@@ -58,6 +58,6 @@ try{
 catch(Exception $e){
    echo sprintf('"code":%d',$code);
 }
-
+*/
 
 ?>
