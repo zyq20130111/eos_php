@@ -34,10 +34,12 @@ try{
       if(($res != NULL)  && (count($res) > 0)){
 
          $basebalance =  $res[0]["base"]["balance"];
+         echo $basebalance;
          $basebalance =  split(" ", $basebalance);
          $basebalance = floatval($basebalance[0]);
          
          $quotebalance = $res[0]["quote"]["balance"];
+         echo $quotebalance;
          $quotebalance = split(" ",$quotebalance);
          $quotebalance = floatval($quotebalance[0]);
     
