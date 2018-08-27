@@ -17,7 +17,7 @@ function request_get($url = ''){
 }
 
 echo "3333";
-/*
+
 $wallet-pwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
 
 $creator = $_GET["creator"];
@@ -30,7 +30,7 @@ $net = $GET["net"];
 
 echo "1111";
 $code = -1;
-
+/*
 try{
    echo "2222";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
