@@ -18,9 +18,10 @@ function request_get($url = ''){
 
 echo "3333";
 
-/*
-$wallet-pwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
 
+$walletpwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
+echo "111";
+/*
 $creator = $_GET["creator"];
 echo $creator;
 
