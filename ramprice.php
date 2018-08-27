@@ -35,6 +35,7 @@ try{
       if(($res != null)  && (count($res) > 0)){
 
          $item = current($res);
+         echo $item;
          $basebalance =  $item["base"]["balance"];
          echo $basebalance;
          $basebalance =  split(" ", $basebalance);
