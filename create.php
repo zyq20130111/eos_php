@@ -28,7 +28,7 @@ $net = $GET["net"];
 $code = -1;
 
 try{
-
+   echo "aaaaa";
    $cmd = sprintf("./create.sh %s %s %s %s %s %s %s %s",$wallet-pwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    exec("./create.sh",$output,$status);
 
