@@ -20,9 +20,10 @@ echo "3333";
 
 $wallet-pwd = "PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T";
 
+/*
 $creator = $_GET["creator"];
 echo $creator;
-/*
+
 $name = $_GET["name"];
 $ownerkey = $_GET["ownerkey"];
 $activekey = $_GET["activekey"];
