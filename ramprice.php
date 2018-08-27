@@ -37,9 +37,12 @@ try{
          $item = current($res["rows"]);
          
          $basebalance =  $item["base"]["balance"];
+         echo $basebalance; 
          $basebalance =  split(" ", $basebalance);
+         echo $basebalance;
          $basebalance = floatval($basebalance[0]);
-         
+         echo $basebalance;
+
          $quotebalance = $item["quote"]["balance"];
          $quotebalance = split(" ",$quotebalance);
          $quotebalance = floatval($quotebalance[0]);
