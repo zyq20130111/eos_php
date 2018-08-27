@@ -4,6 +4,10 @@
 ram="\"$6\""
 cpu="\"$7\""
 net="\"$8\""
+echo $2
+echo $3
+echo $4
+echo $5
 echo $ram
 echo $cpu
 echo $net
