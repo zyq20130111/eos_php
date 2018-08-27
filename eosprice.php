@@ -24,6 +24,9 @@ try{
 
   if($res["code"] == 0){
      $price = $res["data"]["price"];
+  }else{
+     echo '{"code":-1}';
+     return ;    
   }
 
   $ratio = 0;
@@ -41,14 +44,15 @@ try{
 
               break;
            } 
-      }  
-  }
-  echo $price,"aaaa",$ratio;
-  sprinf($str,"price:%f,aaaa,$ratio:%f",$price,$ratio);
-  echo $str;
-  $json_str = '{"code":0,"price":%f}';
-  echo sprintf($json_str,$price * $ratio); 
+      }
 
+     $json_str = '{"code":0,"price":%f}';
+     echo sprintf($json_str,$price * $ratio);
+  
+  }else{
+     echo '{"code":-1}';
+     return;
+  }
 }
 catch(Exception $e)
 {
