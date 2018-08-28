@@ -37,7 +37,7 @@ try{
    $cmd = sprintf('./create.sh %s %s %s %s %s %s %s %s',$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
    
-   shell_exec("/var/account/test.sh");
+   shell_exec("/var/account/create.sh");
    echo "123" ;   
   /*
 
