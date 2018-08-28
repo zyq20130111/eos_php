@@ -33,7 +33,7 @@ $code = -1;
 
 try{
 
-   $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
+   $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
    
    shell_exec($cmd);   
