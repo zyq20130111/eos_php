@@ -34,10 +34,10 @@ $code = -1;
 
 try{
 
-   $cmd = sprintf('./create.sh %s %s %s %s %s %s %s %s',$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
+   $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s %s',$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
    
-   shell_exec("/var/account/create.sh");   
+   shell_exec($cmd);   
   /*
 
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
