@@ -37,7 +37,7 @@ try{
    $cmd = sprintf('./create.sh %s %s %s %s %s %s %s %s',$walletpwd,$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
    
-   shell_exec("/var/www/html/eos_php/test.sh");
+   shell_exec("sudo -S /var/www/html/eos_php/test.sh");
    echo "123" ;   
   /*
 
