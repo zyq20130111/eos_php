@@ -72,8 +72,7 @@ try{
      echo '{"code": -1}';
    }
    //创建账号
-   $ret = shell_exec($cmd);   
-   echo $ret;
+   $ret = shell_exec($cmd);
    if(is_null($ret)){
 
       echo '{"code": -1}';
