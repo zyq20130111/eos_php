@@ -11,7 +11,7 @@ function request_get($url = ''){
    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
    $file_contents = curl_exec($ch);
-   eco $file_contents;
+   echo $file_contents;
    curl_close($ch);
 
    return $file_contents;
