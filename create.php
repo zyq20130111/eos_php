@@ -34,10 +34,10 @@ function getAccount($account){
    $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
   
    if(!is_null($data)){
-
+      print "11111"
       print $data;      
       $json = json_decode($data,true);
-      print json["account_name"];
+      //print json["account_name"];
       //print $json;
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
 
