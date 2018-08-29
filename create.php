@@ -2,19 +2,30 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+function request_post($url = '', $param = '') {
+     if (empty($url) || empty($param)) {
+        return false;
+     }
 
-function request_get($url = ''){
+     $header = array();
+     //$header[] = 'Authorization:'.$tmp;
+     $header[] = 'Accept:application/json';
+     $header[] = 'Content-Type:application/json;charset=utf-8';
 
-   $ch = curl_init();
-   $timeout = 5;
-   curl_setopt ($ch, CURLOPT_URL, $url);
-   curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-   $file_contents = curl_exec($ch);
-   curl_close($ch);
+     $postUrl = $url;
+     $curlPost = $param;
+     $ch = curl_init();//初始化curl
+     curl_setopt($ch, CURLOPT_HEADER, false);
+     curl_setopt($ch, CURLOPT_POST, true);
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+     curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+     curl_setopt($ch, CURLOPT_URL, $postUrl);
 
-   return $file_contents;
+     $data = curl_exec($ch);//运行curl
+     curl_close($ch);
+     return $data;
 }
-
 
 $creator = $_GET["creator"];
 
@@ -41,15 +52,12 @@ try{
 
    }
 
+   $post_data = '{"account_name":"' . $name . '"}';
+   $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
    
-   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s",$name);
-   $result = request_get($url);
-   echo $result;
-   /*
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
-      echo "2222";
       echo $json["account_name"];
       if(is_null($json["account_name"]) == false){
 
@@ -58,7 +66,7 @@ try{
           }
       }
    }
-   */
+
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
