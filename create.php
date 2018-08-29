@@ -42,7 +42,7 @@ try{
    }
 
    
-   $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s",$name);
+   $url = sprintf("http://localhost:8002/eos_php/account.php?account=%s",$name);
    echo $url;
    $result = request_get(url);
    
