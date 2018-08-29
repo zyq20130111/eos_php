@@ -37,6 +37,7 @@ function getAccount($account){
       print "11111";
       print $data;      
       $json = json_decode($data,true);
+      print $json[0];
       //print json["account_name"];
       //print $json;
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
