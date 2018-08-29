@@ -32,9 +32,9 @@ function getAccount($account){
    $flag = -1;
    $post_data = '{"account_name":"' . $name . '"}';
    $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
-
+   echo $result;
    if(!is_null($result)){
-
+      echo "getaccount111";
       $json =json_decode($result,true);
       echo $json["account_name"];
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
