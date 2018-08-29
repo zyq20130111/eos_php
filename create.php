@@ -35,9 +35,10 @@ try{
    
    $ret = shell_exec($cmd);   
    if(is_null($ret)){
-      echo "yyyy";
+
       echo '{"code": -1}';
       return;    
+
    }
 
    
@@ -47,7 +48,7 @@ try{
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
-      echo $json;
+      echo "2222";
       echo $json["account_name"];
       if(is_null($json["account_name"]) == false){
 
