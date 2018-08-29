@@ -27,6 +27,28 @@ function request_post($url = '', $param = '') {
      return $data;
 }
 
+fuction getAccount($account){
+
+   $code = -1;
+   $post_data = '{"account_name":"' . $name . '"}';
+   $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
+
+   if(is_null($result) == false){
+
+      $json =json_decode($result,true);
+      echo $json["account_name"];
+      if((!is_null($json)) &&  (!is_null($json["account_name"]))){
+
+          if(trim($json["account_name"]) == trim($name)){
+               $code = 0;
+          }
+      }
+   }
+   return $code;
+
+}
+
+
 $creator = $_GET["creator"];
 
 $name = $_GET["name"];
@@ -43,7 +65,12 @@ $code = -1;
 try{
 
    $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
-   
+   //判断是否存在相应的账号
+   $code = getAccount($name);
+   if($code == 0){
+     echo '{"code": -1}';
+   }
+   //创建账号
    $ret = shell_exec($cmd);   
    if(is_null($ret)){
 
@@ -51,22 +78,8 @@ try{
       return;    
 
    }
-
-   $post_data = '{"account_name":"' . $name . '"}';
-   $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
-   
-   if(is_null($result) == false){
-
-      $json =json_decode($result,true);
-      echo $json["account_name"];
-      if(is_null($json["account_name"]) == false){
-
-          if(trim($json["account_name"]) == trim($name)){
-               $code = 0;
-          }
-      }
-   }
-
+   //判断账号是否创建成功
+   $code = getAccount($name);
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
