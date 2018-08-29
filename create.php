@@ -65,6 +65,7 @@ try{
 
    if($code == 0){
      echo '{"code": -1}';
+     return;
    }
    //创建账号
    $ret = shell_exec($cmd);
