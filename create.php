@@ -36,7 +36,12 @@ try{
    $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    echo $cmd;
    
-   shell_exec($cmd);   
+   $ret = shell_exec($cmd);   
+   if(is_null($ret)){
+      echo '{"code": -1}';
+      return;    
+   }
+
 
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
