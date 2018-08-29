@@ -29,7 +29,7 @@ function request_post($url = '', $param = '') {
 
 function getAccount($account){
 
-   $code = -1;
+   $ret = -1;
    $post_data = '{"account_name":"' . $name . '"}';
    $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
 
@@ -40,11 +40,11 @@ function getAccount($account){
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
 
           if(trim($json["account_name"]) == trim($name)){
-               $code = 0;
+               $ret = 0;
           }
       }
    }
-   return $code;
+   return $ret;
 
 }
 
