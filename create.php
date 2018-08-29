@@ -35,8 +35,9 @@ function getAccount($account){
   
    if(!is_null($data)){
       
-      $json = json_decode($data,false);
-      print $json;
+      $json = json_decode($data,true);
+      print json["account_name"];
+      //print $json;
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
 
           if(trim($json["account_name"]) == trim($name)){
