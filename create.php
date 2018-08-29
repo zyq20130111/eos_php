@@ -43,10 +43,10 @@ try{
       return;    
    }
 
-/*   
+   
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
-
+/*
    if($result != null){
 
       $json =json_decode($result,true);
