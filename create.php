@@ -38,6 +38,7 @@ try{
    
    $ret = shell_exec($cmd);   
    if(is_null($ret)){
+      echo "yyyy";
       echo '{"code": -1}';
       return;    
    }
@@ -52,11 +53,10 @@ try{
       if($json["account_name"] != null){
 
           if(trim($json["account_name"]) == trim($name)){
-               $code = 0
+               $code = 0;
           }
       }
-   }
-   echo "tttttt";   
+   }   
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
