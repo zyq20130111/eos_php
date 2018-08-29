@@ -11,6 +11,7 @@ function request_get($url = ''){
    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
    $file_contents = curl_exec($ch);
    curl_close($ch);
+   echo $file_contents;
 
    return $file_contents;
 }
@@ -44,8 +45,8 @@ try{
    
    $url = sprintf("http://localhost:8002/eos_php/account.php?account=%s",$name);
    echo $url;
-   $result = request_get(url);
-   
+   #$result = request_get(url);
+   $result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
