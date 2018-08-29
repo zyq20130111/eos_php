@@ -47,12 +47,12 @@ try{
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s",$name);
    $result = request_get(url);
    
-   if($result != null){
+   if(is_null($result) == false){
 
       $json =json_decode($result,true);
       echo $json;
       echo $json["account_name"];
-      if($json["account_name"] != null){
+      if(is_null($json["account_name"]) == false){
 
           if(trim($json["account_name"]) == trim($name)){
                $code = 0;
