@@ -45,8 +45,7 @@ try{
    
    $url = sprintf("http://localhost:8002/eos_php/account.php?account=%s",$name);
    echo $url;
-   #$result = request_get(url);
-   $result = request_get("https://ticker.mars.bituniverse.org/coincap/query_coin_market_cap_with_performance?symbol=EOS&full_name=EOS");
+   $result = request_get($url);
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
