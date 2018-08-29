@@ -32,11 +32,11 @@ function getAccount($account){
    $flag = -1;
    $post_data = '{"account_name":"' . $account . '"}';
    $result = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
-   echo $result;
+  
    if(!is_null($result)){
-      echo "getaccount111";
+      
       $json =json_decode($result,true);
-      echo $json["account_name"];
+      
       if((!is_null($json)) &&  (!is_null($json["account_name"]))){
 
           if(trim($json["account_name"]) == trim($name)){
@@ -67,8 +67,7 @@ try{
    $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
    //判断是否存在相应的账号
    $code = getAccount($name);
-   echo "111";
-   echo $code;
+
    if($code == 0){
      echo '{"code": -1}';
    }
@@ -82,7 +81,6 @@ try{
 
    }
    //判断账号是否创建成功
-   echo "222";
    $code = getAccount($name);
    echo sprintf('{"code":%d}',$code);
 }
