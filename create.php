@@ -56,7 +56,7 @@ try{
           }
       }
    }
-   
+   echo "tttttt";   
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
