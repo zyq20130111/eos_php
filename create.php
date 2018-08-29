@@ -27,7 +27,7 @@ function request_post($url = '', $param = '') {
      return $data;
 }
 
-fuction getAccount($account){
+function getAccount($account){
 
    $code = -1;
    $post_data = '{"account_name":"' . $name . '"}';
