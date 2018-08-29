@@ -4,21 +4,17 @@ header("Content-Type: application/json; charset=UTF-8");
 
 
 function request_get($url = ''){
-   echo "aaaaaa";
+
    $ch = curl_init();
    $timeout = 5;
    curl_setopt ($ch, CURLOPT_URL, $url);
    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-   echo "bbbb";
    $file_contents = curl_exec($ch);
-   echo "cccc";
-   echo $file_contents;
    curl_close($ch);
 
    return $file_contents;
 }
-
 
 
 $creator = $_GET["creator"];
