@@ -42,7 +42,7 @@ try{
       return;    
    }
 
-   /*
+   
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s,$name);
    $result = request_get(url);
 
@@ -51,12 +51,12 @@ try{
       $json =json_decode($result,true);
       if($json["account_name"] != null){
 
-          if(trim($res["account_name"]) == trim($name)){
+          if(trim($json["account_name"]) == trim($name)){
                $code = 0
           }
       }
    }
-   */
+   
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
