@@ -44,7 +44,7 @@ try{
    
    $url = sprintf("http://localhost:8002/eos_php/account.php?account=%s",$name);
    $result = request_get($url);
-
+   /*
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
@@ -57,7 +57,7 @@ try{
           }
       }
    }
-   
+   */
    echo sprintf('{"code":%d}',$code);
 }
 catch(Exception $e){
