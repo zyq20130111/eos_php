@@ -11,7 +11,6 @@ function request_get($url = ''){
    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
    $file_contents = curl_exec($ch);
    curl_close($ch);
-   echo $file_contents;
 
    return $file_contents;
 }
@@ -33,7 +32,6 @@ $code = -1;
 try{
 
    $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
-   echo $cmd;
    
    $ret = shell_exec($cmd);   
    if(is_null($ret)){
@@ -44,8 +42,8 @@ try{
 
    
    $url = sprintf("http://localhost:8002/eos_php/account.php?account=%s",$name);
-   echo $url;
    $result = request_get($url);
+
    if(is_null($result) == false){
 
       $json =json_decode($result,true);
