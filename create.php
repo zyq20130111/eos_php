@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 
 function request_get($url = ''){
-
+   echo "aaaaaa";
    $ch = curl_init();
    $timeout = 5;
    curl_setopt ($ch, CURLOPT_URL, $url);
@@ -46,6 +46,7 @@ try{
 
    
    $url = sprintf("http://127.0.0.1:8002/eos_php/account.php?account=%s",$name);
+   echo $url;
    $result = request_get(url);
    
    if(is_null($result) == false){
