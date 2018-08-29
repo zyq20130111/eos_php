@@ -50,6 +50,7 @@ try{
    if($result != null){
 
       $json =json_decode($result,true);
+      echo $json["account_name"];
       if($json["account_name"] != null){
 
           if(trim($json["account_name"]) == trim($name)){
