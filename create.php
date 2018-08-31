@@ -44,43 +44,33 @@ function getAccount($account){
 }
 
 
-$creator = $_GET["creator"];
+function createAccount($creator,$name,$ownerkey,$activekey,$ram,$cpu,$net)
+{
 
-$name = $_GET["name"];
-$ownerkey = $_GET["ownerkey"];
-$activekey = $_GET["activekey"];
+  $code = -1;
 
+  try{
 
-$ram = $_GET["ram"];
-$cpu = $_GET["cpu"];
-$net = $_GET["net"];
+     $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
+     //判断是否存在相应的账号
+     $code = getAccount($name);
 
-$code = -1;
+     if($code == 0){
+        return -1;
+     }
+     //创建账号
+     $ret = shell_exec($cmd);
+     if(is_null($ret)){
 
-try{
-
-   $cmd = sprintf('/var/account/create.sh %s %s %s %s %s %s %s',$creator,$name,$ownerkey,$activekey,$ram,$cpu,$net);
-   //判断是否存在相应的账号
-   $code = getAccount($name);
-
-   if($code == 0){
-     echo '{"code": -1}';
-     return;
+         return -2;    
+     }
+     //判断账号是否创建成功
+     $code = getAccount($name);
+     return $code;
    }
-   //创建账号
-   $ret = shell_exec($cmd);
-   if(is_null($ret)){
-
-      echo '{"code": -1}';
-      return;    
-
+   catch(Exception $e){
+      return -3;
    }
-   //判断账号是否创建成功
-   $code = getAccount($name);
-   echo sprintf('{"code":%d}',$code);
-}
-catch(Exception $e){
-   echo sprintf('{"code":%d}',$code);
 }
 
 ?>
