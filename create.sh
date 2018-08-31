@@ -5,9 +5,9 @@
 ram="\"$5 EOS\""
 cpu="\"$6 EOS\""
 net="\"$7 EOS\""
-cleos wallet unlock --password PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T
+cleos --wallet-url=http://127.0.0.1:8900  wallet unlock --password PW5Ji9mDxcY83RgQGnooJPQwqMVoSeSABXvff48kevkHYqGV1Ca6T
 
-cmd="cleos system newaccount $1 $2 $3 $4 --buy-ram $ram --stake-cpu $cpu --stake-net $net --transfer"
+cmd="cleos --wallet-url=http://127.0.0.1:8900 system newaccount $1 $2 $3 $4 --buy-ram $ram --stake-cpu $cpu --stake-net $net --transfer"
 echo ${cmd}|awk '{run=$0;system(run)}'
 
 cleos wallet lock 
