@@ -27,6 +27,7 @@ function request_post($url = '', $param = '') {
      return $data;
 }
 
+//得到账号信息 -1表示账号存在，0表示账号存在
 function getAccount($account){
 
    $flag = -1;
@@ -43,7 +44,15 @@ function getAccount($account){
 
 }
 
-
+//创建账号 $create
+/* $creator     主账号
+* $name         账号名称
+* $ownerkey     ownerkey
+* $activekey    activekey 
+* $ram          ram 字符串 保留4位小数0.0004 
+* $cpu          cpu 字符串 保留4位小数0.0001
+* $net          net 字符串 保留4位小数0.0001
+*/
 function createAccount($creator,$name,$ownerkey,$activekey,$ram,$cpu,$net)
 {
 
