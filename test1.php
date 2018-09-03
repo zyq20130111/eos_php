@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require 'config.php';
 
-$conn = new mysqli("127.0.0.1",Config::USERNAME,Config::PWD,Config::DB);
+$conn = new mysqli(Config::IP,Config::USERNAME,Config::PWD,Config::DB);
 
 echo "连接";
 

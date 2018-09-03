@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require 'config.php';
-$conn = new mysqli("localhost",Config::USERNAME,Config::PWD,Config::DB);
+$conn = new mysqli(Config::IP,Config::USERNAME,Config::PWD,Config::DB);
 
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
