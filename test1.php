@@ -2,7 +2,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost","root","123","eosdb"); 
+require 'config.php';
+
+$conn = new mysqli("localhost",Config::USERNAME,Config::PWD,Config::DB);
 
 echo "连接";
 
