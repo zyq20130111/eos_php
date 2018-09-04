@@ -22,7 +22,9 @@ for($i=0 ; $i < count($inj_str) ; $i++)
 }*/
 try{
   $cc = [];
-  echo $cc["bbbb"]["aaaaa"];
+  $a = $cc["bbbb"]["aaaaa"];
+  $b = 1;
+  echo $a + b;
 }
 catch(Exception $e){
   echo "aaa";
