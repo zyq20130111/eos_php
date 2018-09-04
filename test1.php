@@ -22,7 +22,7 @@ for($i=0 ; $i < count($inj_str) ; $i++)
 }*/
 try{
   $cc = [];
-  if(is_null($cc["bbbb"])){
+  if(is_null($cc[0])){
      echo "bbbbb";
   }
 }
