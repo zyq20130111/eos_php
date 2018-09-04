@@ -21,10 +21,10 @@ for($i=0 ; $i < count($inj_str) ; $i++)
     }
 }*/
 try{
-$cc = [];
-echo $cc[0]["bb"];
+  $cc = [];
+  echo $cc[0]["bb"];
 }
-except(Exception $e){
- echo "aaa";
+catch(Exception $e){
+  echo "aaa";
 }
 ?>
