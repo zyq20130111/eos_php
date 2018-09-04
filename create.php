@@ -50,6 +50,10 @@ function checkPermission($account,$ownerkey,$activekey){
    $flag = -1;
    $post_data = '{"account_name":"' . $account . '"}';
    $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
+   
+   if(count($json["permissions"]) < 2){
+      return $flag;
+   }   
 
    $json = json_decode($data,true);
    if(trim($json["account_name"]) == trim($account)){
