@@ -21,6 +21,7 @@ for($i=0 ; $i < count($inj_str) ; $i++)
     }
 }*/
 
-echo "sssss"
+$cc = [];
+echo $cc[0]["bb"];
 
 ?>
