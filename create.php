@@ -44,6 +44,24 @@ function getAccount($account){
 
 }
 
+
+function checkPermission($account,$ownerkey,$activekey){
+
+   $flag = -1;
+   $post_data = '{"account_name":"' . $account . '"}';
+   $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
+
+   $json = json_decode($data,true);
+   if(trim($json["account_name"]) == trim($account)){
+        if( ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $activekey)){
+           $flag = 0;
+        }
+   }
+
+
+   return $flag;   
+}
+
 //创建账号 $create
 /* $creator     主账号
 * $name         账号名称
@@ -74,7 +92,7 @@ function createAccount($creator,$name,$ownerkey,$activekey,$ram,$cpu,$net)
          return -2;    
      }
      //判断账号是否创建成功
-     $code = getAccount($name);
+     $code = checkPermission($name,$ownerkey,$activekey);
      return $code;
    }
    catch(Exception $e){
