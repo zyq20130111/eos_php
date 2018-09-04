@@ -1,4 +1,4 @@
-<?php
+php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -20,8 +20,11 @@ for($i=0 ; $i < count($inj_str) ; $i++)
         return;
     }
 }*/
-
+try{
 $cc = [];
 echo $cc[0]["bb"];
-
+}
+except(Exception $e){
+ echo "aaa";
+}
 ?>
