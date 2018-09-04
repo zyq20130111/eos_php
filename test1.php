@@ -23,6 +23,7 @@ for($i=0 ; $i < count($inj_str) ; $i++)
 try{
   $cc = [];
   echo $cc[0]["bb"];
+  echo "uuuu";
 }
 catch(Exception $e){
   echo "aaa";
