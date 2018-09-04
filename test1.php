@@ -22,8 +22,8 @@ for($i=0 ; $i < count($inj_str) ; $i++)
 }*/
 try{
   $cc = [];
-  if(is_null($cc["bbbb"]){
-     echo "kkkkk";
+  if(is_null($cc["bbbb"])){
+     echo "bbbbb";
   }
 }
 catch(Exception $e){
