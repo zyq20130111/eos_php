@@ -52,12 +52,11 @@ function checkPermission($account,$ownerkey,$activekey){
    $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
    $json = json_decode($data,true);
    
-   if(count($json["permissions"]) < 2){
+   if(isset($json["permissions"]) && (count($json["permissions"]) < 2)){
       return $flag;
    }   
 
-   $json = json_decode($data,true);
-   if(trim($json["account_name"]) == trim($account)){
+   if(isset($json["account_name"]) && (trim($json["account_name"]) == trim($account)) ){
         if( ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $activekey)){
            $flag = 0;
         }
