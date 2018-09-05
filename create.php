@@ -27,7 +27,7 @@ function request_post($url = '', $param = '') {
      return $data;
 }
 
-//得到账号信息 -1表示账号不存在，0表示账号存在
+//得到账号信息 -1表示账号不存在,0表示账号存在
 function getAccount($account){
 
    $flag = -1;
