@@ -54,7 +54,31 @@ function checkPermission($account,$ownerkey,$activekey){
    
    if(isset($json["permissions"]) && (count($json["permissions"]) < 2)){
       return $flag;
+   }
+   $permissions = $json["permissions"];
+
+   if( (!isset($permissions[0]["required_auth"])) || (!isset($permissions[1]["required_auth"])) ){
+       return $flag;  
    }   
+
+
+   $require_auth1 = $permissions[0]["required_auth"];
+   $require_auth2 = $permissions[1]["required_auth"];
+   if((!isset($require_auth1["keys"])) || (!isset($require_auth2["keys"])) ){
+       return $flag;
+   }
+
+   $keys1 = $require_auth1["keys"];
+   $keys2 = $require_auth2["keys"];
+   if((count($keys1) <=0) || (count($keys2) <= 0)){
+       return $flag;
+   }
+
+   $key1 = $keys1[0];
+   $key2 = $keys2[0];
+   if((!isset($key1)) || (!isset($key2)) ){
+       return $flag;
+   }
 
    if(isset($json["account_name"]) && (trim($json["account_name"]) == trim($account)) ){
         if( ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $activekey)){
