@@ -68,6 +68,14 @@ function checkPermission($account,$ownerkey,$activekey){
        return $flag;
    }
 
+
+   if( (!isset($permissions[0]["perm_name"])) || (!isset($permissions[1]["perm_name"])) ){
+       return $flag;
+   }
+
+   $perm_name1 = $permissions[0]["perm_name"];
+   $perm_name2 = $permissions[1]["perm_name"];
+
    $keys1 = $require_auth1["keys"];
    $keys2 = $require_auth2["keys"];
    if((count($keys1) <=0) || (count($keys2) <= 0)){
@@ -81,9 +89,16 @@ function checkPermission($account,$ownerkey,$activekey){
    }
 
    if(isset($json["account_name"]) && (trim($json["account_name"]) == trim($account)) ){
-        if( ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $activekey)){
-           $flag = 0;
-        }
+       
+       if(trim($perm_name1) == "owner"){ 
+           if( ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $activekey)){
+                $flag = 0;
+           }
+       }else{
+           if( ($json["permissions"][1]["required_auth"]["keys"][0]["key"] == $ownerkey) && ($json["permissions"][0]["required_auth"]["keys"][0]["key"] == $activekey)){
+                $flag = 0;
+           }
+       }
    }
 
 
