@@ -36,7 +36,7 @@ function getAccount($account){
 
    $json = json_decode($data,true);
 
-  if(!array_key_exists("account_name",$json){
+  if(!array_key_exists("account_name",$json)){
         return $flag;
    }
 
