@@ -35,7 +35,12 @@ function getAccount($account){
    $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
 
    $json = json_decode($data,true);
-   if(isset($json["account_name"]) &&  (trim($json["account_name"]) == trim($account)) ){
+
+  if(!array_key_exists("account_name",$json){
+        return $flag;
+   }
+
+   if(trim($json["account_name"]) == trim($account)){
         $flag = 0;
    }
 
@@ -51,11 +56,24 @@ function checkPermission($account,$ownerkey,$activekey){
    $post_data = '{"account_name":"' . $account . '"}';
    $data = request_post("http://127.0.0.1:8888/v1/chain/get_account",$post_data);
    $json = json_decode($data,true);
+
+   if( !array_key_exists("account_name",$json) ){
+       return $flag;
+   }
+
+   if(!array_key_exists("permissions",$json){
+	return $flag;
+   }
    
-   if(isset($json["permissions"]) && (count($json["permissions"]) < 2)){
+   if(count($json["permissions"]) < 2){
       return $flag;
    }
+
    $permissions = $json["permissions"];
+
+   if( (!array_key_exists("required_auth",$permissions[0])) || (!array_key_exists("required_auth",$permissions[1])) ){
+       return $flag;
+   }
 
    if( (!isset($permissions[0]["required_auth"])) || (!isset($permissions[1]["required_auth"])) ){
        return $flag;  
@@ -64,10 +82,19 @@ function checkPermission($account,$ownerkey,$activekey){
 
    $require_auth1 = $permissions[0]["required_auth"];
    $require_auth2 = $permissions[1]["required_auth"];
+
+   if( (!array_key_exists("keys",$require_auth1)) || (!array_key_exists("keys",$require_auth2)) ){
+       return $flag;
+   }
+
    if((!isset($require_auth1["keys"])) || (!isset($require_auth2["keys"])) ){
        return $flag;
    }
 
+
+   if( (!array_key_exists("perm_name",$permissions[0])) || (!array_key_exists("perm_name",$permissions[1])) ){
+       return $flag;
+   }
 
    if( (!isset($permissions[0]["perm_name"])) || (!isset($permissions[1]["perm_name"])) ){
        return $flag;
