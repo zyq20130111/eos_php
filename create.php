@@ -61,7 +61,7 @@ function checkPermission($account,$ownerkey,$activekey){
        return $flag;
    }
 
-   if(!array_key_exists("permissions",$json){
+   if(!array_key_exists("permissions",$json)){
 	return $flag;
    }
    
