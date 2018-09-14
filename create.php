@@ -49,6 +49,12 @@ function getAccount($account){
 
 }
 
+//绑定微信账号和EOS账户
+function bindEosAccount($openid,$account){
+   $post_data = '{"account":"' . $account . '",'  . '"openid":"'  .$openid . '"}';
+   $data = request_post("http://127.0.0.1:8003/action",$post_data);   
+}
+
 
 function checkPermission($account,$ownerkey,$activekey){
 
