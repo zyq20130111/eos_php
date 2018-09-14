@@ -168,8 +168,7 @@ function createAccount($creator,$name,$ownerkey,$activekey,$ram,$cpu,$net)
          return -2;    
      }
      //判断账号是否创建成功
-     //$code = checkPermission($name,$ownerkey,$activekey);
-     $code = 0;
+     $code = checkPermission($name,$ownerkey,$activekey);
      return $code;
    }
    catch(Exception $e){
